@@ -32,5 +32,12 @@ public class CapsuleController : MonoBehaviour
             rb.AddForce(Vector3.left * 10f);
             print("left arrow key is held down");
         }
+
+        // Jump when Left Shift is held down
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            rb.AddForce(Vector3.up * 10f);
+            print("left shift key is held down");
+        }
     }
 }
