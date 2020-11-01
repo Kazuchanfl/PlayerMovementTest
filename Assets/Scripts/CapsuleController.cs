@@ -38,7 +38,7 @@ public class CapsuleController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             if (cc.enabled) {
-                rb.AddForce(Vector3.up * 10f);
+                rb.AddForce(Vector3.up * 20f);
                 print("left shift key is held down");
             }
         }
