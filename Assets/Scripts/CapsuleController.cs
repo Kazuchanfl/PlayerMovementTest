@@ -18,6 +18,7 @@ public class CapsuleController : MonoBehaviour
     // ControllCapsule is called to controll capsule object
     private void ControllCapsule() {
         Rigidbody rb = GetComponent<Rigidbody>();
+        CapsuleCollider cc = GetComponent<CapsuleCollider>();
 
         // Move right when Right Arrow is held down
         if (Input.GetKey(KeyCode.RightArrow))
@@ -36,8 +37,10 @@ public class CapsuleController : MonoBehaviour
         // Jump when Left Shift is held down
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            rb.AddForce(Vector3.up * 10f);
-            print("left shift key is held down");
+            if (cc.enabled) {
+                rb.AddForce(Vector3.up * 10f);
+                print("left shift key is held down");
+            }
         }
     }
 }
