@@ -19,9 +19,18 @@ public class CapsuleController : MonoBehaviour
     private void ControllCapsule() {
         Rigidbody rb = GetComponent<Rigidbody>();
 
+        // Move right when Right Arrow is held down
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(Vector3.right * 10f);
+            print("right arrow key is held down");
+        }
+
+        // Move left when Left Arrow is held down
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            rb.AddForce(Vector3.left * 10f);
+            print("left arrow key is held down");
         }
     }
 }
